@@ -7,7 +7,7 @@ To clone and run this repository you'll need [Git](https://git-scm.com) and [Nod
 # Clone this repository
 git clone https://github.com/JoCharlet/GroupIT-Client
 # Go into the repository
-cd electron-quick-start
+cd GroupIT-Client
 # Install dependencies
 npm install
 # Run the app
