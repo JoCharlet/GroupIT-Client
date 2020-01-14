@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+
+<title>GROUP-IT - Blockchain checker</title>
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <center>
+              <img src="images/logo-groupit.jpg" width="150px" /><h3>GROUP-IT - Verificateur d'empreinte d'offre</h3>
+            </center>
+          </div>
+        </div>
+      </div>
+    </header>
+    <br />
+    <main class="container">
+      <div class="row">
+          <div class="col">
+            Vérifier l'empreinte de votre offre sur la blockchain.
+          </div>
+      </div>
+      <br />
+      <div class="row">
+          <div class="col">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Empreinte de l'offre</label>
+                <input type="text" class="form-control" id="printOffer" aria-describedby="printOfferlHelp">
+                <small id="printOfferlHelp" class="form-text text-muted">Vous trouverez cette empreinte sur l'offre fournie</small>
+              </div>
+            </form>
+            <button onclick="checkOffer()" class="btn btn-primary btn-lg">Vérifier</button>
+        </div>
+      </div>
+      <br />
+      <br />
+        <div id="loadingAnimation" class="row" style="display:none">
+          <div class="col">
+            <div class="text-center">
+              <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+              <br />
+              <br />
+              <div class="progress" style="height: 20px;">
+                <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="row justify-content-md-center">
+        <div class"col" id="resultPrintCheck">
+              <div class="alert alert-danger" style="display:none" id="printFail" role="alert">
+                L'empreinte saisie est inexistante, cette empreinte est potentiellement frauduleuse
+              </div>
+              <div class="alert alert-success" style="display:none"  id="printSuccess" role="alert">
+                L'empreinte saisie est correcte
+              </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-sm">
+            <h6>&copy;GROUP-IT </h6>
+          </div>
+        </div>
+
+      </div>
+      </footer>
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./web3.js"></script>
+    <script src="./renderer.js"></script>
+  </body>
+</html>
